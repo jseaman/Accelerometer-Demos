@@ -1,0 +1,205 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* AccelCompDemoAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1591, 635}}";
+			sepNavSelRange = "{254, 21}";
+			sepNavVisRange = "{0, 501}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* AccelCompDemo */ = {
+		activeExec = 0;
+		executables = (
+			4B70B25A10A7B95E00FD1ADF /* AccelCompDemo */,
+		);
+	};
+	28D7ACF60DDB3853001CB0EB /* AccelCompDemoViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1591, 858}}";
+			sepNavSelRange = "{593, 40}";
+			sepNavVisRange = "{143, 915}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* AccelCompDemoViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1238.95, 5566}}";
+			sepNavSelRange = "{6130, 0}";
+			sepNavVisRange = "{6040, 331}";
+			sepNavWindowFrame = "{{15, 91}, {1859, 967}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4B70B25A10A7B95E00FD1ADF /* AccelCompDemo */;
+		activeSDKPreference = iphoneos3.1.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* AccelCompDemo */;
+		breakpoints = (
+		);
+		codeSenseManager = 4B70B26510A7B97E00FD1ADF /* Code sense */;
+		executables = (
+			4B70B25A10A7B95E00FD1ADF /* AccelCompDemo */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1413,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 279760451;
+			PBXWorkspaceStateSaveDate = 279760451;
+		};
+		perUserProjectItems = {
+			4B6F426810ACEF35006701E6 /* PBXTextBookmark */ = 4B6F426810ACEF35006701E6 /* PBXTextBookmark */;
+			4B6F42DA10ACFF80006701E6 /* PBXTextBookmark */ = 4B6F42DA10ACFF80006701E6 /* PBXTextBookmark */;
+			4B6F430410AD0342006701E6 /* PBXTextBookmark */ = 4B6F430410AD0342006701E6 /* PBXTextBookmark */;
+			4B6F434010AD13D1006701E6 /* PBXTextBookmark */ = 4B6F434010AD13D1006701E6 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4B70B26410A7B97E00FD1ADF /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4B6F426810ACEF35006701E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* AccelCompDemoAppDelegate.h */;
+		name = "AccelCompDemoAppDelegate.h: 13";
+		rLen = 21;
+		rLoc = 254;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 0;
+	};
+	4B6F42DA10ACFF80006701E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* AccelCompDemoViewController.h */;
+		name = "AccelCompDemoViewController.h: 26";
+		rLen = 40;
+		rLoc = 593;
+		rType = 0;
+		vrLen = 915;
+		vrLoc = 143;
+	};
+	4B6F430410AD0342006701E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AccelCompDemoViewController.m */;
+		name = "AccelCompDemoViewController.m: 63";
+		rLen = 0;
+		rLoc = 1797;
+		rType = 0;
+		vrLen = 1182;
+		vrLoc = 1060;
+	};
+	4B6F434010AD13D1006701E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AccelCompDemoViewController.m */;
+		name = "AccelCompDemoViewController.m: 90";
+		rLen = 0;
+		rLoc = 2702;
+		rType = 0;
+		vrLen = 764;
+		vrLoc = 1971;
+	};
+	4B70B25A10A7B95E00FD1ADF /* AccelCompDemo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = AccelCompDemo;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+			$cs = 1;
+			$ds = 1;
+			$eax = 1;
+			$ebp = 1;
+			$ebx = 1;
+			$ecx = 1;
+			$edi = 1;
+			$edx = 1;
+			$eflags = 1;
+			$eip = 1;
+			$es = 1;
+			$esi = 1;
+			$esp = 1;
+			$fs = 1;
+			$gs = 1;
+			$mxcsr = 1;
+			$ss = 1;
+		};
+	};
+	4B70B26410A7B97E00FD1ADF /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4B70B26510A7B97E00FD1ADF /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

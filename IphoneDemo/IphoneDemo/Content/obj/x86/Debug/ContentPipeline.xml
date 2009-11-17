@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Models\iphone2.FBX</Source>
+      <Name>Models\iphone2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\Models\iphone2.xnb</Output>
+      <Time>2009-11-02T23:18:40.3385957-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\iphone2_0.xml</Key>
+        <Value>2009-11-12T17:26:51.9336-05:00</Value>
+      </Dependency>
+      <Request>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\Models\Iphone_texture_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Iphone_texture.tga</Source>
+      <Name>Models\Iphone_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\Models\Iphone_texture.xnb</Output>
+      <Time>2009-11-02T21:42:40.230272-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\iphone2.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\iphone2_0.xml</Output>
+      <Time>2009-11-02T23:18:40.3385957-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Iphone_texture.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\Models\Iphone_texture_0.xnb</Output>
+      <Time>2009-11-02T21:42:40.230272-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2009-05-14T11:13:52-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2009-05-14T11:13:52-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2009-05-14T11:13:52-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2009-05-14T11:13:52-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2009-05-14T11:13:52-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-07-19T23:24:47.348805-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

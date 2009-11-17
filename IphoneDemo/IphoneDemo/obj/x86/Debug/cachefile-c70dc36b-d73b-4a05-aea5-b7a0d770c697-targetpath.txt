@@ -1,0 +1,3 @@
+Content\Models\iphone2.xnb
+Content\Models\Iphone_texture.xnb
+Content\Models\Iphone_texture_0.xnb

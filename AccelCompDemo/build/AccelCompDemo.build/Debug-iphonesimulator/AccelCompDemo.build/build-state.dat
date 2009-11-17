@@ -1,0 +1,285 @@
+TAccelCompDemo
+v7
+r0
+t279775515.097303
+cCheck dependencies
+cProcessInfoPlistFile /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/Info.plist AccelCompDemo-Info.plist
+cCompileXIB /Users/JS/Fuentes/AccelCompDemo/MainWindow.xib
+cCompileXIB /Users/JS/Fuentes/AccelCompDemo/AccelCompDemoViewController.xib
+cProcessPCH /var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch.gch AccelCompDemo_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/main.o /Users/JS/Fuentes/AccelCompDemo/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoAppDelegate.o /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoViewController.o /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo normal i386
+cGenerateDSYMFile /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app.dSYM /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo
+cTouch /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk
+c000000004AF0519800000000000000EE
+t1257263512
+s238
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004ABDC853000000000026EE30
+t1253951571
+s2551344
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000004ABDEE58000000000004AFE0
+t1253961304
+s307168
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.h
+c000000004ABDEE5400000000000001AF
+t1253961300
+s431
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004ABDC952000000000027E880
+t1253951826
+s2615424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004ABDC93F0000000000001355
+t1253951807
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004ABDEE1D0000000000000788
+t1253961245
+s1928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004ABDEEE200000000016721E0
+t1253961442
+s23536096
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/arpa/inet.h
+c00000000464386D70000000000001533
+t1178830551
+s5427
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/netinet/in.h
+c00000000476344B700000000000052AA
+t1197687991
+s21162
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/sys/socket.h
+c00000000476344C000000000000055F1
+t1197688000
+s22001
+
+N/Users/JS/Fuentes/AccelCompDemo/AccelCompDemoViewController.xib
+c000000004AFCC80D000000000000703B
+t1258080269
+s28731
+
+N/Users/JS/Fuentes/AccelCompDemo/AccelCompDemo_Prefix.pch
+c000000004AF781DE00000000000000C3
+t1257734622
+s195
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.h
+c000000004AF781DE00000000000001F5
+t1257734622
+s501
+i<UIKit/UIKit.h>
+
+N/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.m
+c000000004AF781DE000000000000027A
+t1257734622
+s634
+i"AccelCompDemoAppDelegate.h"
+i"AccelCompDemoViewController.h"
+
+N/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.h
+c000000004AFCC7FE0000000000000429
+t1258080254
+s1065
+i<UIKit/UIKit.h>
+i<CoreLocation/CoreLocation.h>
+
+N/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.m
+c000000004AFCD17B0000000000001C00
+t1258082683
+s7168
+i"AccelCompDemoViewController.h"
+i<netinet/in.h>
+i<sys/socket.h>
+i<arpa/inet.h>
+
+N/Users/JS/Fuentes/AccelCompDemo/MainWindow.xib
+c000000004AF781DE0000000000002490
+t1257734622
+s9360
+
+N/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemo.LinkFileList
+c000000004AFC9A2800000000000001A8
+t1258068520
+s424
+
+N/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoAppDelegate.o
+t1258080254
+s39020
+
+N/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoViewController.o
+t1258082684
+s65428
+
+N/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/main.o
+t1258068522
+s5944
+
+N/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app
+t1258082684
+s238
+
+N/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app.dSYM
+t1258082684
+s102
+
+N/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo
+t1258082684
+s30004
+
+N/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemoViewController.nib
+t1258080272
+s4420
+
+N/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/Info.plist
+t1258068520
+s588
+
+N/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/MainWindow.nib
+t1258068520
+s1507
+
+N/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/PkgInfo
+t1258068520
+s8
+
+N/Users/JS/Fuentes/AccelCompDemo/main.m
+c000000004AF781DE0000000000000161
+t1257734622
+s353
+i<UIKit/UIKit.h>
+
+N/var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch.gch
+t1258068521
+s13034960
+
+NAccelCompDemo-Info.plist
+c000000004AF781DE000000000000038D
+t1257734622
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies279775515#279775515#0(0"0(0#1#0"4300885448#0"0#
+
+CCompileC build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoAppDelegate.o /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s279773054.307510
+e279773054.463580
+r1
+xCompileC
+xbuild/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoAppDelegate.o
+x/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.m279773054#279773054#0(0"0(0#0#66"/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.m4300885448#1950"    cd /Users/JS/Fuentes/AccelCompDemo    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-generated-files.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-own-target-headers.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-all-target-headers.hmap -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-project-headers.hmap -F/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator -I/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/include -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources/i386 -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources -include /var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch -c /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoAppDelegate.m -o /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoAppDelegate.o0#
+
+CCompileC build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoViewController.o /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s279775483.719705
+e279775484.096896
+r1
+xCompileC
+xbuild/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoViewController.o
+x/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.m279775483#279775484#0(0"0(0#0#69"/Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.m4300885448#1956"    cd /Users/JS/Fuentes/AccelCompDemo    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-generated-files.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-own-target-headers.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-all-target-headers.hmap -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-project-headers.hmap -F/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator -I/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/include -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources/i386 -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources -include /var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch -c /Users/JS/Fuentes/AccelCompDemo/Classes/AccelCompDemoViewController.m -o /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemoViewController.o0#
+
+CCompileC build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/main.o /Users/JS/Fuentes/AccelCompDemo/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s279761322.197413
+e279761322.246681
+r1
+xCompileC
+xbuild/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/main.o
+x/Users/JS/Fuentes/AccelCompDemo/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@46"Compile /Users/JS/Fuentes/AccelCompDemo/main.m279761322#279761322#0(0"0(0#0#38"/Users/JS/Fuentes/AccelCompDemo/main.m4300885448#1902"    cd /Users/JS/Fuentes/AccelCompDemo    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-generated-files.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-own-target-headers.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-all-target-headers.hmap -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-project-headers.hmap -F/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator -I/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/include -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources/i386 -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources -include /var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch -c /Users/JS/Fuentes/AccelCompDemo/main.m -o /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/JS/Fuentes/AccelCompDemo/AccelCompDemoViewController.xib
+s279773071.997670
+e279773072.457145
+r1
+xCompileXIB
+x/Users/JS/Fuentes/AccelCompDemo/AccelCompDemoViewController.xib
+lSLF07#2@42"CompileXIB AccelCompDemoViewController.xib279773071#279773072#0(0"0(0#0#63"/Users/JS/Fuentes/AccelCompDemo/AccelCompDemoViewController.xib4300885448#501"    cd /Users/JS/Fuentes/AccelCompDemo    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemoViewController.nib /Users/JS/Fuentes/AccelCompDemo/AccelCompDemoViewController.xib0#
+
+CCompileXIB /Users/JS/Fuentes/AccelCompDemo/MainWindow.xib
+s279761320.391102
+e279761320.686762
+r1
+xCompileXIB
+x/Users/JS/Fuentes/AccelCompDemo/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib279761320#279761320#0(0"0(0#0#46"/Users/JS/Fuentes/AccelCompDemo/MainWindow.xib4300885448#467"    cd /Users/JS/Fuentes/AccelCompDemo    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/MainWindow.nib /Users/JS/Fuentes/AccelCompDemo/MainWindow.xib0#
+
+CGenerateDSYMFile /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app.dSYM /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo
+s279775484.127512
+e279775484.148929
+r1
+xGenerateDSYMFile
+x/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app.dSYM
+x/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo
+lSLF07#2@127"GenerateDSYMFile build/Debug-iphonesimulator/AccelCompDemo.app.dSYM build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo279775484#279775484#0(0"0(0#0#91"/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo4300885448#380"    cd /Users/JS/Fuentes/AccelCompDemo    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo -o /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app.dSYM0#
+
+CLd /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo normal i386
+s279775484.097033
+e279775484.127391
+r1
+xLd
+x/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo
+xnormal
+xi386
+lSLF07#2@96"Link /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo279775484#279775484#0(0"0(0#0#0"4300885448#883"    cd /Users/JS/Fuentes/AccelCompDemo    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -L/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator -F/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator -filelist /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/Objects-normal/i386/AccelCompDemo.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreLocation -o /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/AccelCompDemo0#
+
+CProcessInfoPlistFile /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/Info.plist AccelCompDemo-Info.plist
+s279761320.386334
+e279761320.391008
+r1
+xProcessInfoPlistFile
+x/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/Info.plist
+xAccelCompDemo-Info.plist
+lSLF07#2@32"Process AccelCompDemo-Info.plist279761320#279761320#0(0"0(0#0#56"/Users/JS/Fuentes/AccelCompDemo/AccelCompDemo-Info.plist4300885448#476"    cd /Users/JS/Fuentes/AccelCompDemo    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility AccelCompDemo-Info.plist -genpkginfo /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app/Info.plist0#
+
+CProcessPCH /var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch.gch AccelCompDemo_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s279761320.790763
+e279761322.197229
+r1
+xProcessPCH
+x/var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch.gch
+xAccelCompDemo_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@35"Precompile AccelCompDemo_Prefix.pch279761320#279761322#0(0"0(0#0#56"/Users/JS/Fuentes/AccelCompDemo/AccelCompDemo_Prefix.pch4300885448#1795"    cd /Users/JS/Fuentes/AccelCompDemo    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-generated-files.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-own-target-headers.hmap -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-all-target-headers.hmap -iquote /Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/AccelCompDemo-project-headers.hmap -F/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator -I/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/include -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources/i386 -I/Users/JS/Fuentes/AccelCompDemo/build/AccelCompDemo.build/Debug-iphonesimulator/AccelCompDemo.build/DerivedSources -c /Users/JS/Fuentes/AccelCompDemo/AccelCompDemo_Prefix.pch -o /var/folders/eC/eCWZ2lyrFimjQWu-XrifVE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AccelCompDemo_Prefix-auizxkqwaeslkdfblghvwcajaenb/AccelCompDemo_Prefix.pch.gch0#
+
+CTouch /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app
+s279775484.149040
+e279775484.152177
+r1
+xTouch
+x/Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app
+lSLF07#2@83"Touch /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app279775484#279775484#0(0"0(0#0#0"4300885448#270"    cd /Users/JS/Fuentes/AccelCompDemo    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/JS/Fuentes/AccelCompDemo/build/Debug-iphonesimulator/AccelCompDemo.app0#
+

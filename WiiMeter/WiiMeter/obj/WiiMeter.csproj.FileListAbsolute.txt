@@ -1,0 +1,19 @@
+C:\Fuentes\WiiMeter\WiiMeter\bin\Debug\WiiMeter.exe
+C:\Fuentes\WiiMeter\WiiMeter\bin\Debug\WiiMeter.pdb
+C:\Fuentes\WiiMeter\WiiMeter\bin\Debug\AquaGauge.dll
+C:\Fuentes\WiiMeter\WiiMeter\obj\Debug\ResolveAssemblyReference.cache
+C:\Fuentes\WiiMeter\WiiMeter\obj\Debug\WiiMeter.Form1.resources
+C:\Fuentes\WiiMeter\WiiMeter\obj\Debug\WiiMeter.Properties.Resources.resources
+C:\Fuentes\WiiMeter\WiiMeter\obj\Debug\WiiMeter.csproj.GenerateResource.Cache
+C:\Fuentes\WiiMeter\WiiMeter\obj\Debug\WiiMeter.exe
+C:\Fuentes\WiiMeter\WiiMeter\obj\Debug\WiiMeter.pdb
+C:\Fuentes\WiiMeter\WiiMeter\bin\Debug\WiimoteLib.dll
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\obj\Debug\WiiMeter.exe
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\obj\Debug\WiiMeter.pdb
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\bin\Debug\WiiMeter.exe
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\bin\Debug\WiiMeter.pdb
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\bin\Debug\WiimoteLib.dll
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\obj\Debug\ResolveAssemblyReference.cache
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\obj\Debug\WiiMeter.Form1.resources
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\obj\Debug\WiiMeter.Properties.Resources.resources
+C:\Fuentes\Accelerometer Demos\WiiMeter\WiiMeter\obj\Debug\WiiMeter.csproj.GenerateResource.Cache

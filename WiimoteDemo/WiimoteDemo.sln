@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiimoteDemo", "WiimoteDemo\WiimoteDemo.csproj", "{BA77096A-AF09-4C22-BC93-5B8E294BCBA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA77096A-AF09-4C22-BC93-5B8E294BCBA1}.Debug|x86.ActiveCfg = Debug|x86
+		{BA77096A-AF09-4C22-BC93-5B8E294BCBA1}.Debug|x86.Build.0 = Debug|x86
+		{BA77096A-AF09-4C22-BC93-5B8E294BCBA1}.Release|x86.ActiveCfg = Release|x86
+		{BA77096A-AF09-4C22-BC93-5B8E294BCBA1}.Release|x86.Build.0 = Release|x86
+		{FC961B5D-1D54-4565-A85F-3A87D2D3516E}.Debug|x86.ActiveCfg = Debug|x86
+		{FC961B5D-1D54-4565-A85F-3A87D2D3516E}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

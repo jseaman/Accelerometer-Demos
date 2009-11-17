@@ -1,0 +1,10 @@
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\bin\x86\Debug\WiimoteDemo.exe
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\bin\x86\Debug\WiimoteDemo.pdb
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\obj\x86\Debug\WiimoteDemo.exe
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\obj\x86\Debug\WiimoteDemo.pdb
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\bin\x86\Debug\Content\Models\WiiDiffuse.xnb
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\bin\x86\Debug\Content\Models\wiimote.xnb
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\bin\x86\Debug\Content\Models\WiiDiffuse_0.xnb
+C:\Fuentes\Accelerometer Demos\WiimoteDemo\WiimoteDemo\bin\x86\Debug\WiimoteLib.dll

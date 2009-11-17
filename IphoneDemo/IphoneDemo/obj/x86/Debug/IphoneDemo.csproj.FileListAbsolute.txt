@@ -1,0 +1,11 @@
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\Models\iphone2.xnb
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\Models\Iphone_texture.xnb
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\Content\Models\Iphone_texture_0.xnb
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\IphoneDemo.exe
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\IphoneDemo.pdb
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\IphoneComm.dll
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\bin\x86\Debug\IphoneComm.pdb
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\obj\x86\Debug\IphoneDemo.exe
+C:\Fuentes\Accelerometer Demos\IphoneDemo\IphoneDemo\obj\x86\Debug\IphoneDemo.pdb

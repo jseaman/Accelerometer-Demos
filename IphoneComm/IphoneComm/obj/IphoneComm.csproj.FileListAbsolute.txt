@@ -1,0 +1,10 @@
+C:\Fuentes\IPhone Demos\IphoneComm\IphoneComm\obj\Debug\ResolveAssemblyReference.cache
+C:\Fuentes\IPhone Demos\IphoneComm\IphoneComm\bin\Debug\IphoneComm.dll
+C:\Fuentes\IPhone Demos\IphoneComm\IphoneComm\bin\Debug\IphoneComm.pdb
+C:\Fuentes\IPhone Demos\IphoneComm\IphoneComm\obj\Debug\IphoneComm.dll
+C:\Fuentes\IPhone Demos\IphoneComm\IphoneComm\obj\Debug\IphoneComm.pdb
+C:\Fuentes\Accelerometer Demos\IphoneComm\IphoneComm\bin\Debug\IphoneComm.dll
+C:\Fuentes\Accelerometer Demos\IphoneComm\IphoneComm\bin\Debug\IphoneComm.pdb
+C:\Fuentes\Accelerometer Demos\IphoneComm\IphoneComm\obj\Debug\ResolveAssemblyReference.cache
+C:\Fuentes\Accelerometer Demos\IphoneComm\IphoneComm\obj\Debug\IphoneComm.dll
+C:\Fuentes\Accelerometer Demos\IphoneComm\IphoneComm\obj\Debug\IphoneComm.pdb
