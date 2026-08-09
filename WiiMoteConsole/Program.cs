@@ -27,11 +27,14 @@ internal static class Program
         using Wiimote wiimote = new();
         try
         {
-            Console.WriteLine("Connecting to Wii Remote Plus...");
+            Console.WriteLine("Connecting to Wii Remote...");
             wiimote.Connect();
-            wiimote.InitializeMotionPlus();
-            Thread.Sleep(750);
-            wiimote.SetReportType(InputReport.IRExtensionAccel, IRSensitivity.WiiLevel3, true);
+            bool hasMotionPlus = TryInitializeMotionPlus(wiimote);
+            bool hasExtension = wiimote.WiimoteState.ExtensionType != ExtensionType.None;
+            wiimote.SetReportType(
+                hasExtension ? InputReport.IRExtensionAccel : InputReport.IRAccel,
+                IRSensitivity.WiiLevel3,
+                true);
             wiimote.SetLEDs(1);
             ResetGyroCalibration();
 
@@ -41,7 +44,8 @@ internal static class Program
             {
                 HandleKeyboard();
                 WiimoteState state = wiimote.WiimoteState;
-                UpdateGyroCalibration(state);
+                if (hasMotionPlus)
+                    UpdateGyroCalibration(state);
                 DrawDashboard(state);
                 Thread.Sleep(33);
             }
@@ -69,6 +73,22 @@ internal static class Program
             }
 
             try { Console.CursorVisible = true; } catch { }
+        }
+    }
+
+    private static bool TryInitializeMotionPlus(Wiimote wiimote)
+    {
+        try
+        {
+            wiimote.InitializeMotionPlus();
+            Thread.Sleep(750);
+            return wiimote.WiimoteState.ExtensionType == ExtensionType.MotionPlus;
+        }
+        catch
+        {
+            // Original RVL-CNT-01 remotes have no built-in gyroscope. They
+            // remain fully usable for accelerometer, IR, buttons, and battery.
+            return false;
         }
     }
 
@@ -113,10 +133,7 @@ internal static class Program
     private static void DrawDashboard(WiimoteState state)
     {
         AccelState accel = state.AccelState;
-        MotionPlusState motion = state.MotionPlusState;
-        Vector3 rawGyro = new(motion.RawValues.X, motion.RawValues.Y, motion.RawValues.Z);
-        bool calibrated = gyroSampleCount >= CalibrationSamples;
-        Vector3 velocity = calibrated ? ConvertGyroVelocity(rawGyro - gyroBias, motion) : Vector3.Zero;
+        bool hasMotionPlus = state.ExtensionType == ExtensionType.MotionPlus;
 
         StringBuilder text = new();
         text.AppendLine("WiiMoteConsole - live raw device values");
@@ -128,15 +145,34 @@ internal static class Program
         text.AppendLine($"  Raw X/Y/Z     : {accel.RawValues.X,6}  {accel.RawValues.Y,6}  {accel.RawValues.Z,6}");
         text.AppendLine($"  G   X/Y/Z     : {accel.Values.X,9:0.0000}  {accel.Values.Y,9:0.0000}  {accel.Values.Z,9:0.0000}");
         text.AppendLine();
-        text.AppendLine("MOTIONPLUS GYROSCOPE");
-        text.AppendLine($"  Raw yaw/roll/pitch : {motion.RawValues.X,6}  {motion.RawValues.Y,6}  {motion.RawValues.Z,6}");
-        text.AppendLine($"  Fast flags         : yaw={motion.YawFast,-5} roll={motion.RollFast,-5} pitch={motion.PitchFast,-5}");
-        text.AppendLine($"  Zero bias          : {gyroBias.X,9:0.0}  {gyroBias.Y,9:0.0}  {gyroBias.Z,9:0.0}");
-        text.AppendLine($"  Velocity deg/s     : yaw={velocity.X,9:0.000}  roll={velocity.Y,9:0.000}  pitch={velocity.Z,9:0.000}");
-        text.AppendLine(calibrated
-            ? "  Calibration        : READY"
-            : $"  Calibration        : KEEP STILL ({gyroSampleCount}/{CalibrationSamples})");
-        text.AppendLine();
+        if (state.ExtensionType == ExtensionType.Nunchuk)
+        {
+            NunchukState nunchuk = state.NunchukState;
+            text.AppendLine("NUNCHUK");
+            text.AppendLine($"  Buttons C/Z       : C={nunchuk.C,-5}  Z={nunchuk.Z,-5}");
+            text.AppendLine($"  Joystick raw X/Y  : {nunchuk.RawJoystick.X,6}  {nunchuk.RawJoystick.Y,6}");
+            text.AppendLine($"  Joystick norm X/Y : {nunchuk.Joystick.X,9:0.0000}  {nunchuk.Joystick.Y,9:0.0000}");
+            text.AppendLine($"  Accel raw X/Y/Z   : {nunchuk.AccelState.RawValues.X,6}  {nunchuk.AccelState.RawValues.Y,6}  {nunchuk.AccelState.RawValues.Z,6}");
+            text.AppendLine($"  Accel G   X/Y/Z   : {nunchuk.AccelState.Values.X,9:0.0000}  {nunchuk.AccelState.Values.Y,9:0.0000}  {nunchuk.AccelState.Values.Z,9:0.0000}");
+            text.AppendLine();
+        }
+        if (hasMotionPlus)
+        {
+            MotionPlusState motion = state.MotionPlusState;
+            Vector3 rawGyro = new(motion.RawValues.X, motion.RawValues.Y, motion.RawValues.Z);
+            bool calibrated = gyroSampleCount >= CalibrationSamples;
+            Vector3 velocity = calibrated ? ConvertGyroVelocity(rawGyro - gyroBias, motion) : Vector3.Zero;
+
+            text.AppendLine("MOTIONPLUS GYROSCOPE");
+            text.AppendLine($"  Raw yaw/roll/pitch : {motion.RawValues.X,6}  {motion.RawValues.Y,6}  {motion.RawValues.Z,6}");
+            text.AppendLine($"  Fast flags         : yaw={motion.YawFast,-5} roll={motion.RollFast,-5} pitch={motion.PitchFast,-5}");
+            text.AppendLine($"  Zero bias          : {gyroBias.X,9:0.0}  {gyroBias.Y,9:0.0}  {gyroBias.Z,9:0.0}");
+            text.AppendLine($"  Velocity deg/s     : yaw={velocity.X,9:0.000}  roll={velocity.Y,9:0.000}  pitch={velocity.Z,9:0.000}");
+            text.AppendLine(calibrated
+                ? "  Calibration        : READY"
+                : $"  Calibration        : KEEP STILL ({gyroSampleCount}/{CalibrationSamples})");
+            text.AppendLine();
+        }
         text.AppendLine($"IR CAMERA - mode: {state.IRState.Mode}");
 
         IRSensor[]? sensors = state.IRState.IRSensors;
@@ -162,7 +198,9 @@ internal static class Program
         text.AppendLine($"  A={buttons.A} B={buttons.B} 1={buttons.One} 2={buttons.Two} +={buttons.Plus} -={buttons.Minus} Home={buttons.Home}");
         text.AppendLine($"  Up={buttons.Up} Down={buttons.Down} Left={buttons.Left} Right={buttons.Right}");
         text.AppendLine();
-        text.AppendLine("C: recalibrate gyro    Q/Esc: quit    Ctrl+C: quit");
+        text.AppendLine(hasMotionPlus
+            ? "C: recalibrate gyro    Q/Esc: quit    Ctrl+C: quit"
+            : "No MotionPlus gyro detected    Q/Esc: quit    Ctrl+C: quit");
 
         try
         {

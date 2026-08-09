@@ -22,7 +22,7 @@ internal sealed class WiimoteConnection : IDisposable
             wiimote.SetReportType(InputReport.ButtonsAccel, true);
             wiimote.SetLEDs(1);
             IsConnected = true;
-            Status = "Connected: Nintendo RVL-CNT-01-TR";
+            Status = "Connected: Nintendo Wii Remote";
         }
         catch (Exception ex)
         {

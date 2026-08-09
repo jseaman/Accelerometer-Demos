@@ -1,0 +1,7 @@
+# Visual Studio and .NET build output
+.vs/
+**/bin/
+**/obj/
+*.suo
+*.user
+TestResults/

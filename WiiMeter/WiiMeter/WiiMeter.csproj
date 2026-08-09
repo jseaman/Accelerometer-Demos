@@ -15,7 +15,7 @@
       <HintPath>..\libs\AquaGauge.dll</HintPath>
     </Reference>
     <Reference Include="WiimoteLib">
-      <!-- WiimoteLib 1.7 patched for RVL-CNT-01-TR (VID 057e, PID 0330). -->
+      <!-- Compatibility build accepting classic (PID 0306) and Plus/TR (PID 0330) remotes. -->
       <HintPath>..\libs\WiimoteLib.dll</HintPath>
     </Reference>
   </ItemGroup>

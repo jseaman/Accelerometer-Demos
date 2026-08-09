@@ -41,9 +41,9 @@ internal sealed class MeterForm : Form
         DoubleBuffered = true;
         ClientSize = new Size(1230, 377);
 
-        accelX = CreateGauge("Acceleration X (g)", -3.0f, 3.0f);
-        accelY = CreateGauge("Acceleration Y (g)", -3.0f, 3.0f);
-        accelZ = CreateGauge("Acceleration Z (g)", -3.0f, 3.0f);
+        accelX = CreateGauge("Acceleration X (g)", -5.0f, 5.0f);
+        accelY = CreateGauge("Acceleration Y (g)", -5.0f, 5.0f);
+        accelZ = CreateGauge("Acceleration Z (g)", -5.0f, 5.0f);
         gyroYaw = CreateGauge("Gyro Yaw (deg/s)", -500.0f, 500.0f);
         gyroRoll = CreateGauge("Gyro Roll (deg/s)", -500.0f, 500.0f);
         gyroPitch = CreateGauge("Gyro Pitch (deg/s)", -500.0f, 500.0f);

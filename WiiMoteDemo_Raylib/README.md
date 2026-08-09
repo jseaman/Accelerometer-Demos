@@ -15,5 +15,5 @@ Press `M` to switch between steering mode and the earlier flat-on-desk mode.
 Flat mode expects the remote to lie with its buttons facing upward and renders
 accelerometer-derived pitch and roll.
 
-The local WiimoteLib 1.7 assembly is patched from product ID `0x0306` to
-`0x0330` for the Nintendo `RVL-CNT-01-TR` Wii Remote Plus.
+The local WiimoteLib compatibility assembly accepts both the original
+`RVL-CNT-01` and the `RVL-CNT-01-TR` Wii Remote Plus.

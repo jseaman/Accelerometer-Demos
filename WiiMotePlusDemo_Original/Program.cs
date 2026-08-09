@@ -44,6 +44,8 @@ internal static class Program
 
         while (!WindowShouldClose())
         {
+            if (!float.IsFinite(yaw)) yaw = 0.0f;
+
             if (IsKeyPressed(KeyboardKey.R) && !remote.IsConnected)
                 remote.TryConnect();
             if (IsKeyPressed(KeyboardKey.C) && remote.IsConnected)
@@ -61,18 +63,20 @@ internal static class Program
                 Vector3 acceleration = motion.Acceleration;
                 Vector3 measuredGravity = new(acceleration.X, acceleration.Z, -acceleration.Y);
                 float magnitudeSquared = measuredGravity.LengthSquared();
-                if (magnitudeSquared > 0.0001f)
+                if (IsFinite(acceleration) && float.IsFinite(magnitudeSquared) && magnitudeSquared > 0.0001f)
                 {
                     gravity = measuredGravity / MathF.Sqrt(magnitudeSquared);
                     Quaternion target = ShortestArc(Vector3.UnitY, gravity);
                     float blend = 1.0f - MathF.Exp(-10.0f * dt);
+                    if (!IsFinite(gravityOrientation))
+                        gravityOrientation = Quaternion.Identity;
                     gravityOrientation = Quaternion.Normalize(
                         Quaternion.Slerp(gravityOrientation, target, blend));
                 }
 
                 // Kept exactly as in WiiMotePlusDemo: calibrated MotionPlus yaw
                 // rate is integrated with the verified physical direction.
-                if (remote.IsCalibrated)
+                if (remote.IsCalibrated && IsFinite(motion.GyroDegreesPerSecond))
                     yaw = WrapAngle(yaw - motion.GyroDegreesPerSecond.X * dt);
             }
 
@@ -121,6 +125,9 @@ internal static class Program
 
     private static void ApplyQuaternion(Quaternion quaternion)
     {
+        if (!IsFinite(quaternion))
+            return;
+
         quaternion = Quaternion.Normalize(quaternion);
         float halfAngleSin = MathF.Sqrt(MathF.Max(0.0f, 1.0f - quaternion.W * quaternion.W));
         if (halfAngleSin < 0.00001f)
@@ -132,6 +139,13 @@ internal static class Program
             quaternion.Y / halfAngleSin,
             quaternion.Z / halfAngleSin);
     }
+
+    private static bool IsFinite(Vector3 value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) && float.IsFinite(value.Z);
+
+    private static bool IsFinite(Quaternion value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) &&
+        float.IsFinite(value.Z) && float.IsFinite(value.W);
 
     private static void GetDisplayAngles(Vector3 gravity, out float pitch, out float roll, out float tilt)
     {

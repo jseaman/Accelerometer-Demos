@@ -9,6 +9,11 @@
     <AssemblyName>WiiMoteVectorVisualizer</AssemblyName>
     <RootNamespace>WiiMoteVectorVisualizer</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <!-- Raylib-cs 8's DrawCylinderEx interop produces no arrow geometry with
+         unoptimized .NET 8 code on this machine. Symbols remain enabled. -->
+    <Optimize>true</Optimize>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Raylib-cs" Version="8.0.0" />
     <Reference Include="WiimoteLib">

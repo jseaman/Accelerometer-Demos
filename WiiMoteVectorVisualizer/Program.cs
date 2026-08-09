@@ -35,6 +35,9 @@ internal static class Program
 
         while (!WindowShouldClose())
         {
+            if (!IsFinite(displayedWorldAcceleration))
+                displayedWorldAcceleration = Vector3.Zero;
+
             if (IsKeyPressed(KeyboardKey.R) && !remote.IsConnected)
                 remote.TryConnect();
 
@@ -48,7 +51,7 @@ internal static class Program
             cameraDistance = Math.Clamp(cameraDistance - GetMouseWheelMove() * 0.6f, 4.5f, 14.0f);
             camera = CreateCamera(cameraAzimuth, cameraElevation, cameraDistance);
 
-            if (remote.TryGetAcceleration(out Vector3 acceleration))
+            if (remote.TryGetAcceleration(out Vector3 acceleration) && IsFinite(acceleration))
             {
                 sensorAcceleration = acceleration;
                 // Wii Remote convention mapped into the scene:
@@ -156,8 +159,11 @@ internal static class Program
 
     private static void DrawArrow3D(Vector3 origin, Vector3 vector, Color color, float shaftRadius)
     {
+        if (!IsFinite(vector))
+            return;
+
         float length = vector.Length();
-        if (length < 0.015f)
+        if (!float.IsFinite(length) || length < 0.015f)
             return;
 
         Vector3 direction = vector / length;
@@ -174,4 +180,7 @@ internal static class Program
         float length = vector.Length();
         return length > maximum && length > 0.0f ? vector * (maximum / length) : vector;
     }
+
+    private static bool IsFinite(Vector3 value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) && float.IsFinite(value.Z);
 }

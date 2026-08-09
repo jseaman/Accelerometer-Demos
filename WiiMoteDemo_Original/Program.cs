@@ -46,17 +46,19 @@ internal static class Program
             if (IsKeyPressed(KeyboardKey.R) && !remote.IsConnected)
                 remote.TryConnect();
 
-            if (remote.TryGetAcceleration(out Vector3 acceleration))
+            if (remote.TryGetAcceleration(out Vector3 acceleration) && IsFinite(acceleration))
             {
                 // Map Wiimote sensor coordinates into the corrected raylib world:
                 // flat/buttons-up (0,0,+1) becomes world-up (0,+1,0).
                 Vector3 measuredGravity = new(acceleration.X, acceleration.Z, -acceleration.Y);
                 float magnitudeSquared = measuredGravity.LengthSquared();
-                if (magnitudeSquared > 0.0001f)
+                if (float.IsFinite(magnitudeSquared) && magnitudeSquared > 0.0001f)
                 {
                     gravity = measuredGravity / MathF.Sqrt(magnitudeSquared);
                     Quaternion target = ShortestArc(Vector3.UnitY, gravity);
                     float blend = 1.0f - MathF.Exp(-10.0f * MathF.Min(GetFrameTime(), 0.05f));
+                    if (!IsFinite(orientation))
+                        orientation = Quaternion.Identity;
                     orientation = Quaternion.Normalize(Quaternion.Slerp(orientation, target, blend));
                 }
             }
@@ -106,6 +108,9 @@ internal static class Program
 
     private static void ApplyQuaternion(Quaternion quaternion)
     {
+        if (!IsFinite(quaternion))
+            return;
+
         quaternion = Quaternion.Normalize(quaternion);
         float halfAngleSin = MathF.Sqrt(MathF.Max(0.0f, 1.0f - quaternion.W * quaternion.W));
         if (halfAngleSin < 0.00001f)
@@ -117,6 +122,13 @@ internal static class Program
             quaternion.Y / halfAngleSin,
             quaternion.Z / halfAngleSin);
     }
+
+    private static bool IsFinite(Vector3 value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) && float.IsFinite(value.Z);
+
+    private static bool IsFinite(Quaternion value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) &&
+        float.IsFinite(value.Z) && float.IsFinite(value.W);
 
     private static void GetDisplayAngles(Vector3 gravity, out float pitch, out float roll, out float tilt)
     {

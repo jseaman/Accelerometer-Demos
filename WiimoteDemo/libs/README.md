@@ -1,7 +1,7 @@
 # WiimoteLib compatibility build
 
-`WiimoteLib.dll` is Brian Peek's WiimoteLib 1.7 with its two hard-coded
-product-ID checks changed from `0x0306` to `0x0330` for the
-`Nintendo RVL-CNT-01-TR` Wii Remote Plus (MotionPlus Inside).
+`WiimoteLib.dll` is built from Brian Peek's WiimoteLib source and accepts both
+the original `RVL-CNT-01` (PID `0x0306`) and the `RVL-CNT-01-TR` Wii Remote
+Plus (PID `0x0330`). The first compatible connected controller is used.
 
 Upstream source and license: <https://github.com/BrianPeek/WiimoteLib>

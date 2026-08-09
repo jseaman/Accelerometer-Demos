@@ -50,9 +50,9 @@ namespace WiimoteDemo
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Could not connect to the Wii Remote Plus.\n\n" +
+                    "Could not connect to a Wii Remote.\n\n" +
                     "Close Dolphin completely, wake the remote, and make sure Windows shows " +
-                    "Nintendo RVL-CNT-01-TR as connected.\n\nDetails: " + ex.Message,
+                    "Nintendo RVL-CNT-01 or RVL-CNT-01-TR as connected.\n\nDetails: " + ex.Message,
                     "Wii Remote not available");
                 this.Exit();
             }

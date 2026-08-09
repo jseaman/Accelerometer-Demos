@@ -44,6 +44,10 @@ internal static class Program
 
         while (!WindowShouldClose())
         {
+            if (!float.IsFinite(pitch)) pitch = 0.0f;
+            if (!float.IsFinite(roll)) roll = 0.0f;
+            if (!float.IsFinite(yaw)) yaw = 0.0f;
+
             if (IsKeyPressed(KeyboardKey.R) && !remote.IsConnected)
                 remote.TryConnect();
             if (IsKeyPressed(KeyboardKey.C) && remote.IsConnected)
@@ -56,16 +60,19 @@ internal static class Program
             if (remote.TryGetMotion(out MotionSample motion))
             {
                 Vector3 acceleration = motion.Acceleration;
-                float targetRoll = MathF.Atan2(-acceleration.X, acceleration.Z) * RadToDeg;
-                float targetPitch = MathF.Atan2(
-                    -acceleration.Y,
-                    MathF.Sqrt(acceleration.X * acceleration.X + acceleration.Z * acceleration.Z)) * RadToDeg;
+                if (IsFinite(acceleration))
+                {
+                    float targetRoll = MathF.Atan2(-acceleration.X, acceleration.Z) * RadToDeg;
+                    float targetPitch = MathF.Atan2(
+                        -acceleration.Y,
+                        MathF.Sqrt(acceleration.X * acceleration.X + acceleration.Z * acceleration.Z)) * RadToDeg;
 
-                float blend = 1.0f - MathF.Exp(-10.0f * dt);
-                roll = LerpAngle(roll, targetRoll, blend);
-                pitch = LerpAngle(pitch, targetPitch, blend);
+                    float blend = 1.0f - MathF.Exp(-10.0f * dt);
+                    roll = LerpAngle(roll, targetRoll, blend);
+                    pitch = LerpAngle(pitch, targetPitch, blend);
+                }
 
-                if (remote.IsCalibrated)
+                if (remote.IsCalibrated && IsFinite(motion.GyroDegreesPerSecond))
                     yaw = WrapAngle(yaw - motion.GyroDegreesPerSecond.X * dt);
             }
 
@@ -105,6 +112,9 @@ internal static class Program
         float delta = WrapAngle(target - current);
         return current + delta * amount;
     }
+
+    private static bool IsFinite(Vector3 value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) && float.IsFinite(value.Z);
 
     private static float WrapAngle(float angle)
     {

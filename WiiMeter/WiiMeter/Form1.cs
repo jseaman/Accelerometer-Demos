@@ -47,9 +47,9 @@ namespace WiiMeter
             catch (Exception E)
             {
                 MessageBox.Show(
-                    "Could not connect to the Wii Remote Plus.\n\n" +
+                    "Could not connect to a Wii Remote.\n\n" +
                     "Close Dolphin completely, wake the remote by pressing a button, and make sure " +
-                    "Windows shows Nintendo RVL-CNT-01-TR as connected. Then restart WiiMeter.\n\n" +
+                    "Windows shows Nintendo RVL-CNT-01 or RVL-CNT-01-TR as connected. Then restart WiiMeter.\n\n" +
                     "Details: " + E.Message,
                     "Wii Remote not available",
                     MessageBoxButtons.OK,

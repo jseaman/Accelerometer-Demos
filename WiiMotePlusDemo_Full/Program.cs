@@ -58,12 +58,17 @@ internal static class Program
             float dt = MathF.Min(GetFrameTime(), 0.05f);
             if (remote.TryGetMotion(out MotionSample motion))
             {
-                gyroRates = motion.GyroDegreesPerSecond;
+                bool gyroValid = IsFinite(motion.GyroDegreesPerSecond);
+                if (gyroValid)
+                    gyroRates = motion.GyroDegreesPerSecond;
+
                 Vector3 acceleration = motion.Acceleration;
                 Vector3 gravitySample = new(acceleration.X, acceleration.Z, -acceleration.Y);
                 float accelerationMagnitude = gravitySample.Length();
+                bool gravityValid = IsFinite(acceleration) &&
+                    float.IsFinite(accelerationMagnitude) && accelerationMagnitude > 0.0001f;
 
-                if (accelerationMagnitude > 0.0001f)
+                if (gravityValid)
                 {
                     measuredGravity = gravitySample / accelerationMagnitude;
                     if (!orientationInitialized)
@@ -73,7 +78,13 @@ internal static class Program
                     }
                 }
 
-                if (remote.IsCalibrated)
+                if (!IsFinite(orientation))
+                {
+                    orientation = Quaternion.Identity;
+                    orientationInitialized = false;
+                }
+
+                if (remote.IsCalibrated && gyroValid)
                 {
                     // WiimoteLib fields are X=yaw, Y=roll, Z=pitch. Convert
                     // those device-local rates into the corrected model basis.
@@ -85,16 +96,19 @@ internal static class Program
                 // Gravity only corrects the two observable tilt degrees of
                 // freedom. The correction is perpendicular to gravity, so it
                 // does not erase gyro twist/yaw when the remote is upright.
-                float gravityConfidence = Math.Clamp(
-                    1.0f - MathF.Abs(accelerationMagnitude - 1.0f) / 0.35f,
-                    0.0f, 1.0f);
-                if (gravityConfidence > 0.0f)
+                if (gravityValid)
                 {
-                    Vector3 predictedGravity = Vector3.Transform(Vector3.UnitY, orientation);
-                    Quaternion fullCorrection = ShortestArc(predictedGravity, measuredGravity);
-                    float correctionBlend = (1.0f - MathF.Exp(-GravityCorrectionRate * dt)) * gravityConfidence;
-                    Quaternion correction = Quaternion.Slerp(Quaternion.Identity, fullCorrection, correctionBlend);
-                    orientation = Quaternion.Normalize(correction * orientation);
+                    float gravityConfidence = Math.Clamp(
+                        1.0f - MathF.Abs(accelerationMagnitude - 1.0f) / 0.35f,
+                        0.0f, 1.0f);
+                    if (gravityConfidence > 0.0f)
+                    {
+                        Vector3 predictedGravity = Vector3.Transform(Vector3.UnitY, orientation);
+                        Quaternion fullCorrection = ShortestArc(predictedGravity, measuredGravity);
+                        float correctionBlend = (1.0f - MathF.Exp(-GravityCorrectionRate * dt)) * gravityConfidence;
+                        Quaternion correction = Quaternion.Slerp(Quaternion.Identity, fullCorrection, correctionBlend);
+                        orientation = Quaternion.Normalize(correction * orientation);
+                    }
                 }
             }
 
@@ -131,8 +145,11 @@ internal static class Program
 
     private static Quaternion IntegrateBodyRates(Quaternion orientation, Vector3 degreesPerSecond, float dt)
     {
+        if (!IsFinite(orientation) || !IsFinite(degreesPerSecond) || !float.IsFinite(dt))
+            return Quaternion.Identity;
+
         float speed = degreesPerSecond.Length();
-        if (speed < 0.0001f)
+        if (!float.IsFinite(speed) || speed < 0.0001f)
             return orientation;
 
         Quaternion increment = Quaternion.CreateFromAxisAngle(
@@ -161,6 +178,9 @@ internal static class Program
 
     private static void ApplyQuaternion(Quaternion quaternion)
     {
+        if (!IsFinite(quaternion))
+            return;
+
         quaternion = Quaternion.Normalize(quaternion);
         float halfAngleSin = MathF.Sqrt(MathF.Max(0.0f, 1.0f - quaternion.W * quaternion.W));
         if (halfAngleSin < 0.00001f)
@@ -172,6 +192,13 @@ internal static class Program
             quaternion.Y / halfAngleSin,
             quaternion.Z / halfAngleSin);
     }
+
+    private static bool IsFinite(Vector3 value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) && float.IsFinite(value.Z);
+
+    private static bool IsFinite(Quaternion value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) &&
+        float.IsFinite(value.Z) && float.IsFinite(value.W);
 
     private static void GetDisplayAngles(
         Vector3 gravity, Quaternion orientation,

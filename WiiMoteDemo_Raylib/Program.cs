@@ -53,6 +53,11 @@ internal static class Program
 
         while (!WindowShouldClose())
         {
+            if (!float.IsFinite(steering)) steering = 0.0f;
+            if (!float.IsFinite(steeringCenter)) steeringCenter = 0.0f;
+            if (!float.IsFinite(pitch)) pitch = 0.0f;
+            if (!float.IsFinite(roll)) roll = 0.0f;
+
             if (IsKeyPressed(KeyboardKey.R) && !remote.IsConnected)
                 remote.TryConnect();
             if (IsKeyPressed(KeyboardKey.M))
@@ -65,7 +70,7 @@ internal static class Program
             if (mode == DemoMode.Steering && IsKeyPressed(KeyboardKey.C))
                 steeringCentered = false;
 
-            if (remote.TryGetAcceleration(out Vector3 acceleration))
+            if (remote.TryGetAcceleration(out Vector3 acceleration) && IsFinite(acceleration))
             {
                 float blend = 1.0f - MathF.Exp(-10.0f * GetFrameTime());
                 if (mode == DemoMode.Steering)
@@ -143,6 +148,9 @@ internal static class Program
         float delta = WrapAngle(target - current);
         return current + delta * amount;
     }
+
+    private static bool IsFinite(Vector3 value) =>
+        float.IsFinite(value.X) && float.IsFinite(value.Y) && float.IsFinite(value.Z);
 
     private static float WrapAngle(float angle)
     {
