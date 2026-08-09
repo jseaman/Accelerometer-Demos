@@ -1,0 +1,23 @@
+# Visual Studio and .NET build output
+.vs/
+**/bin/
+**/obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Per-user IDE state
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+_ReSharper*/
+
+# Test and tooling output
+TestResults/
+*.trx
+coverage/
+BenchmarkDotNet.Artifacts/

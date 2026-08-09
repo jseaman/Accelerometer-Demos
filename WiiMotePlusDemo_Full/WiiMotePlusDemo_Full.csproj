@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>WiiMotePlusDemo_Full</AssemblyName>
+    <RootNamespace>WiiMotePlusDemo_Full</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Raylib-cs" Version="8.0.0" />
+    <Reference Include="WiimoteLib.MotionPlus">
+      <HintPath>libs\WiimoteLib.MotionPlus.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wiimote.glb" Link="Assets\wiimote.glb" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

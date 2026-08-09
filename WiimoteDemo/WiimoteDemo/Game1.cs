@@ -1,15 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Net;
-using Microsoft.Xna.Framework.Storage;
 using WiimoteLib;
 
 namespace WiimoteDemo
@@ -27,7 +19,8 @@ namespace WiimoteDemo
         Vector3 modelPosition = Vector3.Zero;
         Vector3 cameraPosition = new Vector3(0.0f, 50.0f, 5000.0f);
 
-        Wiimote Wii = new Wiimote();
+        readonly Wiimote Wii = new Wiimote();
+        bool wiimoteConnected;
 
         Matrix WiiMatrix = Matrix.Identity;
 
@@ -50,11 +43,17 @@ namespace WiimoteDemo
             try
             {
                 Wii.Connect();
+                wiimoteConnected = true;
                 Wii.SetReportType(InputReport.ExtensionAccel, true);
                 Wii.SetLEDs(1);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show(
+                    "Could not connect to the Wii Remote Plus.\n\n" +
+                    "Close Dolphin completely, wake the remote, and make sure Windows shows " +
+                    "Nintendo RVL-CNT-01-TR as connected.\n\nDetails: " + ex.Message,
+                    "Wii Remote not available");
                 this.Exit();
             }
         }
@@ -82,8 +81,12 @@ namespace WiimoteDemo
         {
             try
             {
-                Wii.SetLEDs(0);
-                Wii.Disconnect();
+                if (wiimoteConnected)
+                {
+                    Wii.SetLEDs(0);
+                    Wii.Disconnect();
+                    wiimoteConnected = false;
+                }
             }
             catch (Exception)
             {
@@ -99,6 +102,9 @@ namespace WiimoteDemo
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+                this.Exit();
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             WiiMatrix = GetWiiMatrix();

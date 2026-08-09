@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>WiiMoteConsole</AssemblyName>
+    <RootNamespace>WiiMoteConsole</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="WiimoteLib.MotionPlus">
+      <HintPath>libs\WiimoteLib.MotionPlus.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

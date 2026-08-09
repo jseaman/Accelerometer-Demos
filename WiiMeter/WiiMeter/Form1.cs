@@ -17,20 +17,23 @@ namespace WiiMeter
             InitializeComponent();
         }
 
-        private Wiimote Wii = new Wiimote();
+        private readonly Wiimote Wii = new Wiimote();
+        private bool wiimoteConnected;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
                 Wii.Connect();
+                wiimoteConnected = true;
+                Wii.WiimoteChanged += Wii_WiimoteChanged;
                 Wii.SetReportType(InputReport.ExtensionAccel, true);
                 Wii.SetLEDs(1);
 
                 if (Nunchuck_Present())
-                    this.Height = 571;
+                    this.Height = 650;
                 else
-                    this.Height = 286;
+                    this.Height = 350;
 
                 WiimoteGaugeX.ThresholdPercent = 20f;
                 WiimoteGaugeY.ThresholdPercent = 20f;
@@ -40,12 +43,18 @@ namespace WiiMeter
                 NunchuckGaugeY.ThresholdPercent = 20f;
                 NunchuckGaugeZ.ThresholdPercent = 20f;
 
-                Wii.WiimoteChanged += new EventHandler<WiimoteChangedEventArgs>(Wii_WiimoteChanged);
             }
             catch (Exception E)
             {
-                MessageBox.Show("Error : " + E.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                MessageBox.Show(
+                    "Could not connect to the Wii Remote Plus.\n\n" +
+                    "Close Dolphin completely, wake the remote by pressing a button, and make sure " +
+                    "Windows shows Nintendo RVL-CNT-01-TR as connected. Then restart WiiMeter.\n\n" +
+                    "Details: " + E.Message,
+                    "Wii Remote not available",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                Close();
             }
         }
 
@@ -75,6 +84,8 @@ namespace WiiMeter
             {
                 GaugeDelegate Func = new GaugeDelegate(ChangeGaugeVal);
 
+                Console.WriteLine("Wiimote: X={0}, Y={1}, Z={2}", e.WiimoteState.AccelState.Values.X, e.WiimoteState.AccelState.Values.Y, e.WiimoteState.AccelState.Values.Z);
+
                 WiimoteGaugeX.Invoke(Func, new object[] { WiimoteGaugeX, e.WiimoteState.AccelState.Values.X });
                 WiimoteGaugeY.Invoke(Func, new object[] { WiimoteGaugeY, e.WiimoteState.AccelState.Values.Y });
                 WiimoteGaugeZ.Invoke(Func, new object[] { WiimoteGaugeZ, e.WiimoteState.AccelState.Values.Z });
@@ -95,8 +106,13 @@ namespace WiiMeter
         {
             try
             {
-                Wii.SetLEDs(0);
-                Wii.Disconnect();
+                if (wiimoteConnected)
+                {
+                    Wii.WiimoteChanged -= Wii_WiimoteChanged;
+                    Wii.SetLEDs(0);
+                    Wii.Disconnect();
+                    wiimoteConnected = false;
+                }
             }
             catch (Exception)
             {
