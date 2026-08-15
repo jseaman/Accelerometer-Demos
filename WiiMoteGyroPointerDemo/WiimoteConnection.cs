@@ -8,7 +8,8 @@ namespace WiiMoteGyroPointerDemo;
 internal readonly record struct MotionSample(
     Vector3 Acceleration,
     Vector3 RawGyroscope,
-    Vector3 GyroDegreesPerSecond);
+    Vector3 GyroDegreesPerSecond,
+    bool BPressed);
 
 internal sealed class WiimoteConnection : IDisposable
 {
@@ -85,7 +86,7 @@ internal sealed class WiimoteConnection : IDisposable
                 Status = "Connected: gyro pointer active";
             }
 
-            sample = new MotionSample(acceleration, raw, Vector3.Zero);
+            sample = new MotionSample(acceleration, raw, Vector3.Zero, state.ButtonState.B);
             return true;
         }
 
@@ -94,7 +95,7 @@ internal sealed class WiimoteConnection : IDisposable
             delta.X / (motion.YawFast ? 4.0f : 20.0f),
             delta.Y / (motion.RollFast ? 4.0f : 20.0f),
             delta.Z / (motion.PitchFast ? 4.0f : 20.0f));
-        sample = new MotionSample(acceleration, raw, velocity);
+        sample = new MotionSample(acceleration, raw, velocity, state.ButtonState.B);
         return true;
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
@@ -16,6 +17,7 @@ internal static class Program
     private const float RollDeadZone = 0.40f;
     private const float PitchDeadZone = 0.50f;
     private const int GyroAverageSamples = 8;
+    private const int MaximumPenSegments = 30000;
     private static readonly Rectangle ScreenArea = new(70, 120, 960, 540);
 
     [STAThread]
@@ -37,6 +39,9 @@ internal static class Program
         Vector3 filteredGyro = Vector3.Zero;
         RollingVectorAverage gyroAverage = new(GyroAverageSamples);
         bool useGyroAverage = true;
+        bool penDown = false;
+        Vector2? previousPenPosition = null;
+        Queue<PenSegment> penSegments = new();
 
         while (!WindowShouldClose())
         {
@@ -60,6 +65,7 @@ internal static class Program
             float dt = MathF.Min(GetFrameTime(), 0.05f);
             if (remote.TryGetMotion(out MotionSample motion))
             {
+                penDown = motion.BPressed;
                 if (IsFinite(motion.Acceleration) && IsFinite(motion.RawGyroscope))
                     displayed = motion;
 
@@ -126,12 +132,28 @@ internal static class Program
             if (!float.IsFinite(roll)) roll = 0.0f;
 
             Vector2 pointer = ProjectPointer(horizontalAngle, verticalAngle);
+            if (penDown)
+            {
+                if (previousPenPosition is Vector2 previous && Vector2.DistanceSquared(previous, pointer) >= 0.25f)
+                {
+                    penSegments.Enqueue(new PenSegment(previous, pointer));
+                    if (penSegments.Count > MaximumPenSegments)
+                        penSegments.Dequeue();
+                }
+                previousPenPosition = pointer;
+            }
+            else
+            {
+                previousPenPosition = null;
+            }
 
             BeginDrawing();
             ClearBackground(new Color(12, 16, 24, 255));
             DrawText("MotionPlus screen pointer (no IR)", 70, 24, 30, Color.RayWhite);
             DrawText(remote.Status, 70, 66, 19, remote.IsConnected ? Color.Lime : Color.Orange);
             DrawVirtualScreen();
+            foreach (PenSegment segment in penSegments)
+                DrawLineEx(segment.From, segment.To, 4.0f, new Color(80, 220, 255, 255));
             DrawPointer(pointer, roll);
             DrawTelemetry(remote, displayed, filteredGyro, horizontalAngle, verticalAngle, roll, useGyroAverage);
             EndDrawing();
@@ -255,4 +277,6 @@ internal static class Program
             count = 0;
         }
     }
+
+    private readonly record struct PenSegment(Vector2 From, Vector2 To);
 }
